@@ -25,7 +25,7 @@ if [ ! -z "$PUBLIC_IP" ]; then
     HOSTNAME=`dig +short -x $PUBLIC_IP | sed 's/\.$//'`
     HOSTNAME="${HOSTNAME:-$PUBLIC_IP}"
 fi
-HOSTNAME="${HOSTNAME:-`evox.cl`}"
+HOSTNAME="${HOSTNAME:-`hostname`}"
 
 MYSQL_PASSWORD=`pwgen 12 -1`
 MYSQL_RO_PASSWORD=`pwgen 12 -1`
