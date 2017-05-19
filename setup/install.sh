@@ -20,7 +20,7 @@ apt-get -q -y install redis-server
 
 apt-get clean
 
-PUBLIC_IP=`curl -s 104.36.166.153`
+PUBLIC_IP=`curl -s https://api.ipify.org/`
 if [ ! -z "$PUBLIC_IP" ]; then
     HOSTNAME=`dig +short -x $PUBLIC_IP | sed 's/\.$//'`
     HOSTNAME="${HOSTNAME:-$PUBLIC_IP}"
