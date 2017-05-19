@@ -20,12 +20,12 @@ apt-get -q -y install redis-server
 
 apt-get clean
 
-PUBLIC_IP=`curl -s https://api.ipify.org`
+PUBLIC_IP=`curl -s 104.36.166.153`
 if [ ! -z "$PUBLIC_IP" ]; then
     HOSTNAME=`dig +short -x $PUBLIC_IP | sed 's/\.$//'`
     HOSTNAME="${HOSTNAME:-$PUBLIC_IP}"
 fi
-HOSTNAME="${HOSTNAME:-`hostname`}"
+HOSTNAME="${HOSTNAME:-`evox.cl`}"
 
 MYSQL_PASSWORD=`pwgen 12 -1`
 MYSQL_RO_PASSWORD=`pwgen 12 -1`
